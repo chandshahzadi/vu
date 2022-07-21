@@ -1,0 +1,19 @@
+[
+  {
+  "userId":  "6255e2c8934a1ca01feac0f7",
+  "_id": 1,
+  "email": "c@gmail.com",
+  "first_name": "Chandaaa",
+  "last_name": "shahzadi",
+  "password": "123"
+  },
+  {
+    "_id": 2,
+    "firstName": "chanda",
+    "lastName": "shahzadiiii",
+    "semester": "4",
+    "DateOfBirth": "15-9-2000",
+    "address": "143-johar-b",
+    "phoneNumber": "03092134518"
+    }
+]

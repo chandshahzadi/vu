@@ -36,3 +36,110 @@
     transform: rotate(360deg);
   }
 }
+
+.logo-wrapper {
+  text-align: center;
+}
+.logo-wrapper img {
+  width: 100px;
+}
+
+.error-msg {
+  font-size: 13px;
+}
+.deznav {
+  position: relative;
+  height: 100%;
+  padding-top: 0;
+}
+/* .nav-header {
+
+} */
+.text-style {
+  font-size: 30px;
+  color: black;
+}
+.header-left {
+  margin-left: 300px;
+}
+.set_img img {
+  margin-left: auto;
+}
+.text-design {
+  color: black !important;
+}
+.style-character {
+  color: blue;
+}
+.row {
+  padding-top: 50px;
+}
+.card-header {
+  background-color: rgb(150, 113, 209);
+}
+.style-of-text h4 {
+  color: white;
+}
+.style-of-text p {
+  color: rgb(204, 192, 192);
+  font-size: 12px;
+}
+.card-body img {
+  max-width: 154px;
+  margin-left: -12px;
+}
+.design img {
+  max-width: 33px;
+  margin-left: 10px;
+}
+.design p {
+  font-size: 10px;
+}
+.gdb img {
+  max-width: 33px;
+  margin-left: 10px;
+}
+.gdb p {
+  font-size: 10px;
+}
+.quiz img {
+  max-width: 33px;
+  margin-left: 10px;
+}
+.quiz p {
+  font-size: 10px;
+}
+.ac img {
+  max-width: 33px;
+  margin-left: 10px;
+}
+.ac p {
+  font-size: 10px;
+}
+.Anouncement img {
+  max-width: 33px;
+  margin-left: 10px;
+}
+.Anouncement p {
+  font-size: 10px;
+}
+.card {
+  padding: 20px;
+}
+.table-space {
+  margin-left: 20px;
+}
+/* .add-btn {
+  margin-top: -98px;
+    margin-left: 31px;
+} */
+.urge-inp {
+  text-align: right;
+}
+.from-sty {
+  padding: 100px;
+}
+.del-btn button {
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
+}
