@@ -30,9 +30,9 @@ function App() {
                       <Route path="/dashboard/admin/assignments" component={Assignments} />
                       <Route path="/dashboard/admin/quiz" component={Quiz}/>
                       <Route path="/dashboard/admin/subjects" component={Subjects} />
+                      <Route path="/dashboard/admin/students/edit/:id" component={EditStudent} />
                       <Route path="/dashboard/admin/students" component={Students} />
                       <Route path="/dashboard/admin/teachers" component={Teacher} />
-                    <Route path="/dashboard/admin/students/editStudent/:id" component={EditStudent} />
                     </Switch>
                   </AdminTemplate>
                   </Route>

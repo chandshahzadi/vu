@@ -6,7 +6,6 @@ const AP_URL = "http://localhost:3001";
 const FormTable = (props: any) => {
     const [showSuccess, setshowSuccess] = useState();
     const [submitted, setSubmitted] = useState(false);
-    const [valid, setValid] = useState(false);
     const [data, setdata] = useState({
         firstName: "",
         lastName: "",

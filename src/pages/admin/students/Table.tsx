@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-
+import { NavLink, Link } from "react-router-dom";
 const StudentTable = () => {
     const [students, setStudents] = useState<any[]>([])
     const [DeleteData, setDeleteData] = useState<any[]>([])
