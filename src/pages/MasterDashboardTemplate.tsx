@@ -1,4 +1,3 @@
-import console from 'console';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +5,6 @@ import Navigation from "./../components/Navigation";
 
 
 function MasterDashboardTemplate(props: any){
-       
     return(
         <>
         <div id='main-header' className='show'>
@@ -75,7 +73,7 @@ function MasterDashboardTemplate(props: any){
         </div>     
             <div className='content-body' style={{minHeight: 860}}>
                 <div className='container-fluid'>
-                {props.children}
+                    {props.children}
                 </div>
             </div>
         </>
