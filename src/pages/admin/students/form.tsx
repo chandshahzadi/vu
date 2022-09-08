@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const AP_URL = "http://localhost:3001";
-
 const FormTable = (props: any) => {
     const [showSuccess, setshowSuccess] = useState();
     const [submitted, setSubmitted] = useState(false);
-    const [data, setdata] = useState({
+    const [data, setData] = useState({
         firstName: "",
         lastName: "",
         semester: "",
@@ -18,38 +16,38 @@ const FormTable = (props: any) => {
     const [students, setStudents] = useState<any[]>([])
     const test = "";
     const onChangeFirstName = (event: any) => {
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             firstName: event.target.value,
         }));
     }
     const onChangeLastName = (event: any) => {
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             lastName: event.target.value,
         }));
     }
     const onChangeSemester = (event: any) => {
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             semester: event.target.value,
         }));
     }
     const onChangeDateOfBirth = (event: any) => {
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             dateOfBirth: event.target.value,
         }));
     }
     const onChangeAddress = (event: any) => {
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             address: event.target.value,
         }));
     }
     const onChangePhoneNumber = (event: any) => {
 
-        setdata((data) => ({
+        setData((data) => ({
             ...data,
             phoneNumber: event.target.value,
         }));
@@ -58,10 +56,9 @@ const FormTable = (props: any) => {
         await axios.post("http://localhost:3001/data",{
             data
         })
-        console.log("chand",data)
-
+        console.log("chandaa",data)
     } 
-    console.log("im gettig data from node",data)
+    console.log("im gettig data from nodeeee",data)
     return (
         <>
             <form action="" className="from-sty">

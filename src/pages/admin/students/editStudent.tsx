@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Route, useParams, Link } from 'react-router-dom';
-import { useEffect } from "react";
+// import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-const EditStudent = () => {
+const EditStudent = (prop : any) => {
       const [student, setStudent] = useState({
         firstName: "",
         lastName: "",
@@ -14,8 +14,9 @@ const EditStudent = () => {
         phoneNumber: "",
         getstudent : ""
       });
-    
-    const test = "";
+    // const location = useLocation();
+    // const state = location.state;
+
     const onChangeFirstName = (event: any) => {
         setStudent((student) => ({
             ...student,
@@ -53,18 +54,26 @@ const EditStudent = () => {
             phoneNumber: event.target.value,
         }));
     }
-     let { id }: any = useParams();
-    const handleEditButtonClick = async () => { 
-        
-    } 
-    const getStudent = async() => {
+    const id = prop.location.state.id;
+
+    const getStudent = async () => {
         const response = await axios.get("http://localhost:3001/students/" + id);
-        setStudent(previousState => response.data.student) 
-        console.log("check",response )
+        setStudent((student) => ({
+            ...student,
+            firstName: response.data.student.firstName,
+            lastName: response.data.student.lastName,
+            semester: response.data.student.semester,
+            dateOfBirth: response.data.student.dateOfBirth,
+            address: response.data.student.address,
+            phoneNumber: response.data.student.phoneNumber
+        }));
     }
-    useEffect (() => {
-        getStudent();
-    }, [])
+    const navigate = useNavigate();
+    const submitBtnOnclick = async (event: any) => {
+        event.preventDefault();
+        await axios.post("http://localhost:3001/student/" + id, student);
+        navigate('/dashboard/admin/students'); 
+    }
     return (
         <>
           <form action="" className="from-sty">
@@ -113,8 +122,7 @@ const EditStudent = () => {
                         className="form-control" placeholder="PhoneNumber" />
                     </div>
                 </div>
-                    <button className="btn btn-primary btn-block" onClick={handleEditButtonClick}>Edit</button>
-
+                <button className="btn btn-primary btn-block" onClick={() => submitBtnOnclick}>Submittt</button>
             </form>  
         </>
     )

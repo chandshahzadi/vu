@@ -1,6 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
-import './App.css';
+import './assets/css/style.css';
 import Login from './pages/login';
 import MasterDashboardTemplate from './pages/MasterDashboardTemplate';
 import AdminTemplate from './pages/admin/template';
@@ -10,38 +10,35 @@ import Subjects from './pages/admin/subjects';
 import Quiz from './pages/admin/quiz';
 import Assignments from './pages/admin/assignments';
 import Announcemnts from './pages/admin/announcements';
-import  EditStudent from "./pages/admin/students/editStudent";
+import EditStudent from "./pages/admin/students/editStudent";
 
 
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Teacher from './pages/admin/teachers';
 
 function App() {
   return (
-      <BrowserRouter>
-        <Switch>
+    <BrowserRouter>
+      <Routes>
           <Route path="/dashboard">
             <MasterDashboardTemplate>
-              <Switch>
                 <Route path="/dashboard/admin">
                   <AdminTemplate>
-                    <Switch>
-                      <Route path="/dashboard/admin/announcements" component={Announcemnts }/>
-                      <Route path="/dashboard/admin/assignments" component={Assignments} />
-                      <Route path="/dashboard/admin/quiz" component={Quiz}/>
-                      <Route path="/dashboard/admin/subjects" component={Subjects} />
-                      <Route path="/dashboard/admin/students/edit/:id" component={EditStudent} />
-                      <Route path="/dashboard/admin/students" component={Students} />
-                      <Route path="/dashboard/admin/teachers" component={Teacher} />
-                    </Switch>
+                    <Route path="/dashboard/admin/announcements" element={Announcemnts} />
+                      <Route path="/dashboard/admin/assignments" element={Assignments} />
+                      <Route path="/dashboard/admin/quiz" element={Quiz}/>
+                      <Route path="/dashboard/admin/subjects" element={Subjects} />
+                      <Route path="/dashboard/admin/students/edit" element={EditStudent} />
+                      <Route path="/dashboard/admin/students" element={Students} />
+                      <Route path="/dashboard/admin/teachers" element={Teacher} />
                   </AdminTemplate>
                   </Route>
-                <Route path="/dashboard" component={Home}/>
-              </Switch>
+                <Route path="/dashboard" element={Home}/>
             </MasterDashboardTemplate>
-          </Route>          
-          <Route path={"/login"} component={Login} />
-        </Switch>
+        </Route>   
+        <Route path={"/login"} element={Login} />
+        </Routes>
       </BrowserRouter>
   );
 }
