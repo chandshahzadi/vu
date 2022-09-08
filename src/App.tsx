@@ -1,4 +1,6 @@
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import React from 'react';
+
 // import logo from './logo.svg';
 import './assets/css/style.css';
 import Login from './pages/login';
@@ -13,33 +15,30 @@ import Announcemnts from './pages/admin/announcements';
 import EditStudent from "./pages/admin/students/editStudent";
 
 
-
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Teacher from './pages/admin/teachers';
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-          <Route path="/dashboard">
-            <MasterDashboardTemplate>
-                <Route path="/dashboard/admin">
-                  <AdminTemplate>
-                    <Route path="/dashboard/admin/announcements" element={Announcemnts} />
-                      <Route path="/dashboard/admin/assignments" element={Assignments} />
-                      <Route path="/dashboard/admin/quiz" element={Quiz}/>
-                      <Route path="/dashboard/admin/subjects" element={Subjects} />
-                      <Route path="/dashboard/admin/students/edit" element={EditStudent} />
-                      <Route path="/dashboard/admin/students" element={Students} />
-                      <Route path="/dashboard/admin/teachers" element={Teacher} />
-                  </AdminTemplate>
-                  </Route>
-                <Route path="/dashboard" element={Home}/>
-            </MasterDashboardTemplate>
-        </Route>   
-        <Route path={"/login"} element={Login} />
+        <Routes>
+          <Route path="dashboard/*" element={<MasterDashboardTemplate>
+               <Routes>
+                  <Route path="*" element={<p>not found</p>} />
+                  <Route path="announcements" element={<Announcemnts />} />
+                  <Route path="assignments" element={<Assignments />} />
+                  <Route path="quiz" element={<Quiz />}/>
+                  <Route path="subjects" element={<Subjects />} />
+                  <Route path="students/edit" element={<EditStudent />} />
+                  <Route path="students" element={<Students />} />
+                  <Route path="teachers" element={<Teacher />} />
+                </Routes>
+              </MasterDashboardTemplate>
+            }>
+              
+          </Route>   
+          <Route path={"login"} element={<Login />} />
         </Routes>
-      </BrowserRouter>
+    </BrowserRouter>
   );
 }
 export default App;
