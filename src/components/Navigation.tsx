@@ -2,64 +2,19 @@ import { Link } from "react-router-dom";
 
 const navigation = [
     {
-        title: "Home",
-        pageURL: "/dashboard/home",
+        title: "Students",
+        pageURL: "/dashboard/students",
         Iconclass: "flaticon-381-networking"
     },
     {
-        title: "To Add Calender",
-        pageURL: "/dashboard/To_Add_Calender",
+        title: "Teachers",
+        pageURL: "/dashboard/Teachers",
         Iconclass: "flaticon-381-networking"
     },
     {
-        title: "Grade Book",
-        pageURL: "/dashboard/Grade_book",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Account Book",
-        pageURL: "/dashboard/Account_Book",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Progress",
-        pageURL: "/dashboard/Progress",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Lecture Schedual",
-        pageURL: "/dashboard/Lecture_Schedual",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Mail",
-        pageURL: "/dashboard/Mail",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Notes",
-        pageURL: "/dashboard/Notes",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "My Study Scheme",
-        pageURL: "/dashboard/My Study Scheme",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "My Study Courses",
-        pageURL: "/dashboard/My Study Courses",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Student Service",
-        pageURL: "/dashboard/Student Service",
-        Iconclass: "flaticon-381-television"
-    },
-    {
-        title: "Admin",
-        pageURL: "/dashboard/admin",
-        Iconclass: "flaticon-381-television"
+        title: "Subjects",
+        pageURL: "/dashboard/Subjects",
+        Iconclass: "flaticon-381-networking"
     },
 
 ]

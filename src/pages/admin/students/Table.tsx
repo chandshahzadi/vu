@@ -7,7 +7,7 @@ const StudentTable = () => {
     const [students, setStudents] = useState<any[]>([])
     const [DeleteData, setDeleteData] = useState<any[]>([])
     const getData = async () => {
-        const response = await axios.get('http://localhost:3001/students');
+        const response = await axios.get('http://localhost:3002/students');
                 console.log("getData", response);
 
         setStudents(previousState => response.data.docs);
@@ -16,14 +16,14 @@ const StudentTable = () => {
         getData();
     }, [])
     const handleDeleteStudent =  async(_id : string , index : any)  => {
-       await axios.delete("http://localhost:3001/students/" + _id)
+       await axios.delete("http://localhost:3002/students/" + _id)
         setStudents(students => {
             students.splice(index)
             return[...students]
         })
     };
     const handleEditStudent = async (id : any , index : any) => {
-        const response = await axios.post("http://localhost:3001/students/" + id,{
+        const response = await axios.post("http://localhost:3002/students/" + id,{
         });
         console.log("edit handle", response);
     }
@@ -52,9 +52,8 @@ const StudentTable = () => {
                             <td>{student.address}</td>
                             <td>{student.phoneNumber}</td>
                             <td>
-                               <Link to={{
-                                    pathname: '/dashboard/admin/students/edit',
-                                }} ><button type="button" className="btn btn-primary mb-2" data-toggle="modal" data-target="#basicModal" onClick={()=>handleEditStudent(student._id, index )}>Edit</button></Link>
+                               <Link to= 'editStudent'
+                                 ><button type="button" className="btn btn-primary mb-2" data-toggle="modal" data-target="#basicModal" onClick={()=>handleEditStudent(student._id, index )}>Edit</button></Link>
                                 <button type="button" className="btn btn-primary mb-2" data-toggle="modal" data-target="#basicModal" onClick={() => handleDeleteStudent(student._id , index)}>Delete</button>
                             </td>
                         </tr>

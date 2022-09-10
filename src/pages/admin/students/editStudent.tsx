@@ -57,7 +57,7 @@ const EditStudent = (prop : any) => {
     const id = prop.location.state.id;
 
     const getStudent = async () => {
-        const response = await axios.get("http://localhost:3001/students/" + id);
+        const response = await axios.get("http://localhost:3002/students/" + id);
         setStudent((student) => ({
             ...student,
             firstName: response.data.student.firstName,
@@ -68,11 +68,13 @@ const EditStudent = (prop : any) => {
             phoneNumber: response.data.student.phoneNumber
         }));
     }
+    console.log("id", id)
     const navigate = useNavigate();
     const submitBtnOnclick = async (event: any) => {
         event.preventDefault();
-        await axios.post("http://localhost:3001/student/" + id, student);
-        navigate('/dashboard/admin/students'); 
+        const response = await axios.post("http://localhost:3002/students/" + id, student);
+        // navigate('/students/edit'); 
+        console.log("res", response)
     }
     return (
         <>
